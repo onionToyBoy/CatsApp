@@ -2,13 +2,16 @@
 import React from 'react';
 import { StyleSheet, View,  TextInput } from 'react-native';
 
-
+const searchCat=function(text){
+  alert(text);
+}
 export const Search = (props)=> {
 	return (
 	<TextInput style={styles.search}
      placeholder="Type Here..." 
      editable
       maxLength={30}
+      onChangeText={text=>{searchCat(text)}}
     />
 	);
 

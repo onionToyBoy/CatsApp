@@ -1,29 +1,28 @@
-
 import React from 'react';
 
 import { StyleSheet, Text, View,TouchableOpacity, Image} from 'react-native';
 
 
 
-export const CatItem = (props)=> {
+export const Cat = ({cat,goToCat})=> {
 
   return (
   <TouchableOpacity 
   style={styles.outerContainer}
-onPress={()=> props.goToCat(props.cat.name)}
+onPress={()=>goToCat(cat)}
    >
     <View style={styles.nameAndBreadBlock}>
-      <Text style={styles.catName}>{props.cat.name}</Text>
-      <Text style={styles.catBread}>{props.cat.bread}</Text>
+      <Text style={styles.catName}>{cat.name}</Text>
+      <Text style={styles.catBread}>{cat.bread}</Text>
     </View>
     <View style={styles.innerContainer}>
       
   <Image 
-    source={props.cat.photo}
+    source={cat.photo}
 
           style={styles.image}
           />
-      <Text style={styles.textInfo}>{props.cat.info}</Text>
+      <Text style={styles.textInfo}>{cat.info}</Text>
     </View>
     </TouchableOpacity>
     

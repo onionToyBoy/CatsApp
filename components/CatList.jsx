@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View,ScrollView, Image} from 'react-native';
 import  {LinearGradient} from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
-import {InfoBlock} from './InfoBlock/InfoBlock';
+import {InfoBlock} from '../components/InfoBlock/InfoBlock';
 
-export const CatList = (props)=> {
+export const CatScreen = ()=> {
 return(
 <ScrollView style={styles.scroll}>
 <LinearGradient colors={['#152A57FF','#373967FF','#53223AFF']}  style={styles.container}>
