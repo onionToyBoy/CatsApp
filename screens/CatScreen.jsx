@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View,ScrollView, Image} from 'react-native'
+import { StyleSheet, Text, View,ScrollView, Image,} from 'react-native'
 import  {LinearGradient} from 'expo-linear-gradient'
 import {InfoBlock} from '../components/InfoBlock/InfoBlock'
 import {randomFactsGenerator} from '../randomFactsGenerator'
@@ -7,38 +7,46 @@ import {randomFactsGenerator} from '../randomFactsGenerator'
 
 const CatScreen = ({navigation,getRandomFact})=> {
 	return(
-		<ScrollView style={styles.scroll}>
-			<LinearGradient colors={['#152A57FF','#373967FF','#53223AFF']}  style={styles.container}>
-	
-				<Image source={navigation.getParam('cat').photo} style={styles.image}/>
 		
 	
+		<LinearGradient colors={['#152A57FF','#373967FF','#53223AFF']}  style={styles.container}>
+			
+			<ScrollView style={styles.scroll}>
+			<View  style={styles.secondContainer}>
+				<Image source={navigation.getParam('cat').photo} style={styles.image}/>
+				
 				<InfoBlock cat={navigation.getParam('cat')}/>
+				
 				<View style={styles.randomFactsBlock}>
 					<Text style={styles.randomFactsTitle}>Рандомный факт о котах:</Text>
 					<Text style={styles.randomInfo}>{randomFactsGenerator.getRandomFact()}</Text>
 				</View>
-
-			</LinearGradient>
-			<View style={styles.bottomLine}></View>	
-		</ScrollView>
+			</View>
+			</ScrollView>
+			
+		</LinearGradient>
+		
+		
 )}
 const styles = StyleSheet.create({
 container:{
   flex: 1,
-  width:'100%',
-  alignItems: 'center',
-    justifyContent: 'center', 
+  
 },
  scroll:{
     flex: 1,
-  width:'100%',
-
+},
+secondContainer:{
+	width:'100%',
+  height:'100%',
+  alignItems:'center',
+justifyContent:'center'
 },
 image:{
   	width: '90%',
  	 height: 180,
  	 margin: 25,
+	  alignItems: 'flex-start',
 },
 randomFactsBlock:{
 	width: '90%',
@@ -54,12 +62,7 @@ randomFactsTitle:{
 },
 randomInfo:{
 	fontSize:15,
+	marginBottom:20,
 },
-bottomLine:{
-	borderBottomWidth: 1,
-	borderBottomColor:'black',
-	justifyContent:'flex-end',
-}
-
 });
   export default CatScreen

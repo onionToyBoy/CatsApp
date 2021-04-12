@@ -54,25 +54,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  textInfo: {
-  color: 'black',
-  fontSize: 30,
-  margin: 20,
-  },
   header:{
-alignItems: 'flex-start',
-margin:5,
-},
-search:{
-  height: 40,
-  width:'100%',
-  backgroundColor: 'white',
-  justifyContent:'flex-end',
-  alignItems:'center',
-  borderWidth: 1,
-  borderColor:'black',
-  paddingLeft: 8,
-},
+    alignItems: 'flex-start',
+    margin:5,
+  },
+  search:{
+    height: 40,
+    width:'100%',
+   backgroundColor: 'white',
+    justifyContent:'flex-end',
+    alignItems:'center',
+   borderWidth: 1,
+   borderColor:'black',
+   paddingLeft: 8,
+  },
 });
   
   export default MainScreen
