@@ -2,10 +2,8 @@
 import React from 'react';
 import { StyleSheet, View,  TextInput } from 'react-native';
 
-const searchCat=function(text){
-  setText(text);
-}
-export const Search = (props)=> {
+
+export const Search = ({searchCat})=> {
 	return (
 	<TextInput style={styles.search}
      placeholder="Type Here..." 

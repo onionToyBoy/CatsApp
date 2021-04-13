@@ -7,23 +7,22 @@ import { StyleSheet, Text, View,TouchableOpacity, Image} from 'react-native';
 export const Cat = ({cat,goToCat})=> {
 
   return (
-  <TouchableOpacity 
-  style={styles.outerContainer}
-onPress={()=>goToCat(cat)}
-   >
-    <View style={styles.nameAndBreadBlock}>
-      <Text style={styles.catName}>{cat.name}</Text>
-      <Text style={styles.catBread}>{cat.bread}</Text>
-    </View>
-    <View style={styles.innerContainer}>
+    <TouchableOpacity 
+      style={styles.outerContainer}
+      onPress={()=>goToCat(cat)}>
+      <View style={styles.nameAndBreadBlock}>
+        <Text style={styles.catName}>{cat.name}</Text>
+        <Text style={styles.catBread}>{cat.bread}</Text>
+      </View>
+      <View style={styles.innerContainer}>
       
-  <Image 
-    source={cat.photo}
+        <Image 
+          source={cat.photo}
 
           style={styles.image}
           />
-      <Text style={styles.textInfo}>{cat.info}</Text>
-    </View>
+        <Text style={styles.textInfo}>{cat.info}</Text>
+      </View>
     </TouchableOpacity>
     
     
@@ -32,12 +31,12 @@ onPress={()=>goToCat(cat)}
 
 const styles = StyleSheet.create({
   outerContainer:{
-margin:15,
-marginBottom:40,
-padding:10,
-borderColor:'#C1807CFF',
-borderWidth: 1,
-borderRadius:5,
+    margin:20,
+   
+    padding:10,
+    borderColor:'#C1807CFF',
+    borderWidth: 1,
+    borderRadius:7,
 
 },
   innerContainer: {
@@ -46,9 +45,9 @@ borderRadius:5,
     justifyContent: 'center', 
   },
   catName:{
-  color: 'black',
-  fontSize: 17,
-  fontWeight: "bold",
+    color: 'black',
+    fontSize: 17,
+    fontWeight: "bold",
 },
 catBread:{
   color: 'black',

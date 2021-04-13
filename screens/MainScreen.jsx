@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
 import React, {useState,useEffect} from 'react'
-import { StyleSheet, Text, View,TextInput ,SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View,TextInput ,SafeAreaView} from 'react-native'
 import  {LinearGradient} from 'expo-linear-gradient'
 
 
@@ -12,21 +12,16 @@ import {state} from '../state'
 const MainScreen=({navigation})=>{
 
   const [cats,setCats] = useState(state)
+  const [text,setText] = useState('')
 
   const goToCat= (cat)=>{
     navigation.navigate('Cat',{cat})
   }
 
-/* const searchCat=function(text=true){return text}
+ const searchCat= function(text){
+  setCats(state.filter(el=>el.name.includes(text)))};
 
-const renderCats = cats.
-filter(el=>{if(searchCat()){
-  return true;}
-else{el.name.toLowerCase().includes(searchCat().toLowerCase())}}).
-map((cat)=>(<Cat
-cat={cat} 
-key={cat.id}
-goToCat={goToCat}/>)); */
+
 
 
   return(
@@ -39,12 +34,7 @@ goToCat={goToCat}/>)); */
           <StatusBar style="auto" />
         </SafeAreaView>
         </LinearGradient>
-      <TextInput style={styles.search}
-        placeholder="Type Here..." 
-        editable
-        maxLength={30}
-        onChangeText={text=>{searchCat(text)}}
-      />
+      <Search searchCat={searchCat}/>
     </View>
   );
 }
@@ -61,12 +51,12 @@ const styles = StyleSheet.create({
   search:{
     height: 40,
     width:'100%',
-   backgroundColor: 'white',
+    backgroundColor: '#FFFFFFAD',
     justifyContent:'flex-end',
     alignItems:'center',
-   borderWidth: 1,
-   borderColor:'black',
-   paddingLeft: 8,
+    borderWidth: 1,
+    borderColor:'black',
+     paddingLeft: 8,
   },
 });
   

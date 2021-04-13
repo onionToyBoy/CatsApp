@@ -1,6 +1,20 @@
 import React from 'react'
-import {FlatList} from 'react-native'
+import {FlatList,View} from 'react-native'
 import {Cat} from './Cat'
+
+
+const renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: '100%',
+          backgroundColor: '#7E3032FF',
+        }}
+      />
+    )
+  }
+
 
 export const CatsGenerator = ({cats,goToCat}) =>(
 <FlatList
@@ -8,6 +22,7 @@ export const CatsGenerator = ({cats,goToCat}) =>(
           renderItem={({item})=><Cat cat={item} goToCat={goToCat}/>
           }
           keyExtractor={item => item.id.toString()}
+          ItemSeparatorComponent={renderSeparator}
 />
 )
 
