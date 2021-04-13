@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, Text, View,TextInput ,SafeAreaView} from 'react-native'
 import  {LinearGradient} from 'expo-linear-gradient'
-
 
 import {Search} from '../components/Search'
 import {CatsGenerator} from '../components/CatsGenerator'
@@ -12,17 +11,21 @@ import {state} from '../state'
 const MainScreen=({navigation})=>{
 
   const [cats,setCats] = useState(state)
-  const [text,setText] = useState('')
+  
+//Функция перехода на другую страницу:
 
   const goToCat= (cat)=>{
     navigation.navigate('Cat',{cat})
   }
 
+//Функция поиска по странице:
+
  const searchCat= function(text){
-  setCats(state.filter(el=>el.name.includes(text)))};
-
-
-
+  setCats(state.filter(el=>
+    el.name.toLowerCase().includes(text.toLowerCase())||
+    el.bread.toLowerCase().includes(text.toLowerCase())||
+    el.info.toLowerCase().includes(text.toLowerCase())))
+  };
 
   return(
 
@@ -34,7 +37,7 @@ const MainScreen=({navigation})=>{
           <StatusBar style="auto" />
         </SafeAreaView>
         </LinearGradient>
-      <Search searchCat={searchCat}/>
+      <Search searchCat={searchCat} />
     </View>
   );
 }
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     borderWidth: 1,
     borderColor:'black',
-     paddingLeft: 8,
+    paddingLeft: 8,
   },
 });
   

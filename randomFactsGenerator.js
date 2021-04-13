@@ -1,3 +1,5 @@
+//Объект, содержащий рандомные факты о котах и генератор выдающий случайный факт:
+
 export const randomFactsGenerator={
 
 randomFacts: ['Дверь для домашних кошек изобрел выдающийся ученый Исаак Ньютон.',
@@ -13,4 +15,4 @@ randomFacts: ['Дверь для домашних кошек изобрел вы
 ],
 
 	getRandomFact(){return this.randomFacts[Math.floor(Math.random()*this.randomFacts.length)]},
-}
+};

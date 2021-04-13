@@ -1,7 +1,9 @@
 import React from 'react'
 import {FlatList,View} from 'react-native'
+
 import {Cat} from './Cat'
 
+//Создаём разделитель между генерируемыми объектами:
 
 const renderSeparator = () => {
     return (
@@ -15,14 +17,12 @@ const renderSeparator = () => {
     )
   }
 
-
 export const CatsGenerator = ({cats,goToCat}) =>(
-<FlatList
-          data={cats}
-          renderItem={({item})=><Cat cat={item} goToCat={goToCat}/>
-          }
-          keyExtractor={item => item.id.toString()}
-          ItemSeparatorComponent={renderSeparator}
+  <FlatList
+    data={cats}
+    renderItem={({item})=><Cat cat={item} goToCat={goToCat}/>}
+    keyExtractor={item => item.id.toString()}
+    ItemSeparatorComponent={renderSeparator}
 />
 )
 
